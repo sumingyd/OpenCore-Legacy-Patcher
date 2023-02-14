@@ -10,7 +10,7 @@ jobs:
   build:
     name: Validate
     runs-on: x86_64_mojave
-    if: github.repository_owner == 'dortania'
+    if: github.repository_owner == 'sumingyd'
     env:
       branch: ${{ github.ref }}
       commiturl: ${{ github.event.head_commit.url }}${{ github.event.release.html_url }}
