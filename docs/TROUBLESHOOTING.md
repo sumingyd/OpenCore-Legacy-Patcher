@@ -38,7 +38,7 @@ Once you've booted OpenCore at least once, your hardware should now auto-boot it
 
 ## Cannot boot macOS without the USB
 
-By default, the OpenCore Patcher won't install OpenCore onto the internal drive itself during installs. Instead, you'll need to either [manually transfer](https://dortania.github.io/OpenCore-Post-Install/universal/oc2hdd.html) OpenCore to the internal drive's EFI or run this patcher's Option 2 again and select your internal drive.
+By default, the OpenCore Patcher won't install OpenCore onto the internal drive itself during installs. Instead, you'll need to either [manually transfer](https://sumingyd.github.io/OpenCore-Post-Install/universal/oc2hdd.html) OpenCore to the internal drive's EFI or run this patcher's Option 2 again and select your internal drive.
 
 Reminder that once this is done, you'll need to select OpenCore in the boot picker again for your hardware to remember this entry and auto boot from then on.
 
@@ -50,7 +50,7 @@ With OpenCore Legacy Patcher, we rely on Apple Secure Boot to ensure OS updates 
 
 ## Reboot when entering Hibernation (`Sleep Wake Failure`)
 
-[Known issue on some models](https://github.com/dortania/Opencore-Legacy-Patcher/issues/72), a temporary fix is to disable Hibernation by executing the following command in the terminal:
+[Known issue on some models](https://github.com/sumingyd/Opencore-Legacy-Patcher/issues/72), a temporary fix is to disable Hibernation by executing the following command in the terminal:
 
 ```
 sudo pmset -a hibernatemode 0
@@ -102,7 +102,7 @@ If you're using OCLP v0.4.4, you should have been prompted to install Root Volum
 
 ## Black Screen on MacBookPro11,3 in macOS Monterey
 
-Due to Apple dropping NVIDIA Kepler support in macOS Monterey, [MacBookPro11,3's GMUX has difficulties switching back to the iGPU to display macOS correctly.](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/522) To work-around this issue, boot the MacBookPro11,3 in Safe Mode and once macOS is installed, run OCLP's Post Install Root Patches to enable GPU Acceleration for the NVIDIA dGPU.
+Due to Apple dropping NVIDIA Kepler support in macOS Monterey, [MacBookPro11,3's GMUX has difficulties switching back to the iGPU to display macOS correctly.](https://github.com/sumingyd/OpenCore-Legacy-Patcher/issues/522) To work-around this issue, boot the MacBookPro11,3 in Safe Mode and once macOS is installed, run OCLP's Post Install Root Patches to enable GPU Acceleration for the NVIDIA dGPU.
 
 * Safe Mode can be started by holding `Shift` + `Enter` when selecting macOS Monterey in OCLP's Boot Menu.
 
@@ -169,7 +169,7 @@ For Macs using legacy USB 1.1 controllers, OpenCore Legacy Patcher can only rest
 
 More information can be found here:
 
-* [Legacy UHCI/OHCI support in Ventura #1021](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1021)
+* [Legacy UHCI/OHCI support in Ventura #1021](https://github.com/sumingyd/OpenCore-Legacy-Patcher/issues/1021)
 
 Applicable models include:
 

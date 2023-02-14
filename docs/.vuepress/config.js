@@ -24,29 +24,29 @@ module.exports = {
     ],
     base: '/OpenCore-Legacy-Patcher/',
 
-	watch: {
-	    $page(newPage, oldPage) {
-	      if (newPage.key !== oldPage.key) {
-	        requestAnimationFrame(() => {
-	          if (this.$route.hash) {
-	            const element = document.getElementById(this.$route.hash.slice(1));
+    watch: {
+        $page(newPage, oldPage) {
+            if (newPage.key !== oldPage.key) {
+                requestAnimationFrame(() => {
+                    if (this.$route.hash) {
+                        const element = document.getElementById(this.$route.hash.slice(1));
 
-	            if (element && element.scrollIntoView) {
-	              element.scrollIntoView();
-	            }
-	          }
-	        });
-	      }
-	    }
-	  },
+                        if (element && element.scrollIntoView) {
+                            element.scrollIntoView();
+                        }
+                    }
+                });
+            }
+        }
+    },
 
-	markdown: {
-		extendMarkdown: md => {
-			md.use(require('markdown-it-multimd-table'), {
-				rowspan: true,
-			});
-		}
-	},
+    markdown: {
+        extendMarkdown: md => {
+            md.use(require('markdown-it-multimd-table'), {
+                rowspan: true,
+            });
+        }
+    },
 
     theme: 'vuepress-theme-succinct',
     globalUIComponents: [
@@ -55,11 +55,11 @@ module.exports = {
 
     themeConfig: {
         lastUpdated: true,
-        repo: 'https://github.com/dortania/OpenCore-Legacy-Patcher/',
-		docsDir: 'docs',
-		docsBranch: 'main',
-		editLinks: true,
-		editLinkText: 'Help us improve this page!',
+        repo: 'https://github.com/sumingyd/OpenCore-Legacy-Patcher/',
+        docsDir: 'docs',
+        docsBranch: 'main',
+        editLinks: true,
+        editLinkText: 'Help us improve this page!',
         logo: 'homepage.png',
 
         sidebar: [{
@@ -67,8 +67,8 @@ module.exports = {
             collapsable: false,
             sidebarDepth: 1,
             children: [
-				'START',
-				'MODELS',
+                'START',
+                'MODELS',
             ]
 
         },
@@ -78,7 +78,7 @@ module.exports = {
             sidebarDepth: 1,
             children: [
                 'INSTALLER',
-				'BUILD',
+                'BUILD',
             ]
 
         },
@@ -87,8 +87,8 @@ module.exports = {
             collapsable: false,
             sidebarDepth: 1,
             children: [
-				'BOOT',
-				'POST-INSTALL',
+                'BOOT',
+                'POST-INSTALL',
             ]
 
         },
@@ -97,16 +97,16 @@ module.exports = {
             collapsable: false,
             sidebarDepth: 1,
             children: [
-				['VENTURA-DROP', 'macOS Ventura Support'],
+                ['VENTURA-DROP', 'macOS Ventura Support'],
             ]
-        },      
-		  
-	{
+        },
+
+        {
             title: 'macOS Monterey',
             collapsable: false,
             sidebarDepth: 1,
             children: [
-				['MONTEREY-DROP', 'macOS Monterey Support'],
+                ['MONTEREY-DROP', 'macOS Monterey Support'],
             ]
         },
         {
@@ -114,14 +114,14 @@ module.exports = {
             collapsable: false,
             sidebarDepth: 1,
             children: [
-				'ACCEL',
-				'TROUBLESHOOTING',
-				'DEBUG',
-				'UPDATE',
-				'UNINSTALL',
-				'ICNS',
-				'WINDOWS',
-				'UNIVERSALCONTROL',
+                'ACCEL',
+                'TROUBLESHOOTING',
+                'DEBUG',
+                'UPDATE',
+                'UNINSTALL',
+                'ICNS',
+                'WINDOWS',
+                'UNIVERSALCONTROL',
             ]
         },
         {
@@ -129,8 +129,8 @@ module.exports = {
             collapsable: false,
             sidebarDepth: 1,
             children: [
-				'DONATE',
-				'LICENSE',
+                'DONATE',
+                'LICENSE',
             ]
 
         },
@@ -139,11 +139,11 @@ module.exports = {
             collapsable: false,
             sidebarDepth: 1,
             children: [
-				'ISSUES-HOLD',
-				'TESTED',
-				'TERMS',
-				'HOW',
-				'PATCHEXPLAIN',
+                'ISSUES-HOLD',
+                'TESTED',
+                'TERMS',
+                'HOW',
+                'PATCHEXPLAIN',
             ]
 
         },

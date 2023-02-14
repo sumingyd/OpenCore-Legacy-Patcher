@@ -162,7 +162,7 @@ class DetectRootPatch:
                             # If not, enable legacy GCN patch
                             # MacBookPro13,3 does include an unsupported framebuffer, thus we'll patch to ensure
                             # full compatibility (namely power states, etc)
-                            # Reference: https://github.com/dortania/bugtracker/issues/292
+                            # Reference: https://github.com/sumingyd/bugtracker/issues/292
                             # TODO: Probe framebuffer families further
                             if self.model != "MacBookPro13,3":
                                 if "AVX2" in self.constants.computer.cpu.leafs:
@@ -543,7 +543,7 @@ class DetectRootPatch:
             # Sierra uses a legacy GMUX control method needed for dGPU switching on MacBookPro5,x
             # Same method is also used for demuxed machines
             # Note that MacBookPro5,x machines are extremely unstable with this patch set, so disabled until investigated further
-            # Ref: https://github.com/dortania/OpenCore-Legacy-Patcher/files/7360909/KP-b10-030.txt
+            # Ref: https://github.com/sumingyd/OpenCore-Legacy-Patcher/files/7360909/KP-b10-030.txt
             if self.constants.detected_os > os_data.os_data.high_sierra:
                 if self.model in ["MacBookPro8,2", "MacBookPro8,3"]:
                     # Ref: https://doslabelectronics.com/Demux.html

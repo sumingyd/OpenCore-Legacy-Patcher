@@ -4,12 +4,12 @@
    "description": "Guide to put macOS on unsupported devices",
    "main": "",
    "author": {
-      "name": "Dortania",
-      "url": "https://github.com/dortania"
+      "name": "sumingyd",
+      "url": "https://github.com/sumingyd"
    },
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/dortania/OpenCore-Legacy-Patcher.git"
+      "url": "git+https://github.com/sumingyd/OpenCore-Legacy-Patcher.git"
    },
    "scripts": {
       "dev": "vuepress dev",
@@ -47,5 +47,5 @@
       "vuepress-theme-succinct": "^1.6.4",
       "vuepress-theme-yuu": "^2.3.0"
    },
-   "homepage": "https://dortania.github.io/OpenCore-Legacy-Patcher/"
+   "homepage": "https://sumingyd.github.io/OpenCore-Legacy-Patcher/"
 }

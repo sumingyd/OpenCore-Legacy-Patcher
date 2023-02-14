@@ -71,7 +71,7 @@
   - Implemented via Root Volume patching, ie. no installer support at this time
     - Support should be seen as experimental, especially for laptops
   - Applicable for Penryn Macs and Cheese Grater Mac Pros (MacPro3,1 - MacPro5,1)
-  - See associated issue for current limitations: [Legacy UHCI/OHCI support in Ventura](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1021)
+  - See associated issue for current limitations: [Legacy UHCI/OHCI support in Ventura](https://github.com/sumingyd/OpenCore-Legacy-Patcher/issues/1021)
     - USB 3.0 controllers cannot be used along side USB 1.1 patches, OCLP will prioritize USB 3.0 support
 - Add early non-Metal Graphics Acceleration support for macOS Ventura
   - Applicable for following GPU architectures:
@@ -136,7 +136,7 @@
   - Automatically remove unsupported News Widgets on Ivy Bridge and Haswell iGPUs
     - Alleviates Notification Centre Crashing
   - Implement downloading from Kernel Debug Kit Backup Repository
-    - Alleviates issues with Apple blocking KDK downloads from OCLP (Ref: [Issue #1016](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1016))
+    - Alleviates issues with Apple blocking KDK downloads from OCLP (Ref: [Issue #1016](https://github.com/sumingyd/OpenCore-Legacy-Patcher/issues/1016))
 - Work-around MacPro6,1 and Lilu race condition
   - Ensure Model and Board ID are set correctly before Lilu loads
 - Publish Application Version in UI header
@@ -245,7 +245,7 @@
   - Only installs kernel space patches on 12.5 and newer
   - Avoids lock out of user, however breaks graphics acceleration
   - Install 12.4 or older for full graphics acceleration on Kepler
-  - Reference: [macOS 12.5: Nvidia Kepler and WindowServer crashing #1004](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1004)
+  - Reference: [macOS 12.5: Nvidia Kepler and WindowServer crashing #1004](https://github.com/sumingyd/OpenCore-Legacy-Patcher/issues/1004)
 
 ## 0.4.8
 - Ensure Apple Silicon-specific installers are not listed
@@ -283,7 +283,7 @@
   - Resolves ZLib decompression kernel panics on 12.4 and newer
 - Resolve AppleGVACore crashing on MacBookPro11,3 in Monterey 12.4+
 - Add Nvidia Web Driver support for Maxwell and Pascal
-  - Currently running in OpenGL mode, [non-Metal issues](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/108) applicable
+  - Currently running in OpenGL mode, [non-Metal issues](https://github.com/sumingyd/OpenCore-Legacy-Patcher/issues/108) applicable
 - Enable Beta Blur settings on non-Metal by default
   - For slower hardware, disabling may slightly improve performance
 - Deprecate TUI support
@@ -362,9 +362,9 @@
   - Post OS Updates:
     - After OS updates, Patcher will detect whether system requires root patches and prompt you
     - Implemented via Launch Agent in `/Library/LaunchAgents`
-    - OpenCore-Patcher.app will be copied to `/Library/Application Support/Dortania` for storage
+    - OpenCore-Patcher.app will be copied to `/Library/Application Support/sumingyd` for storage
   - Notify users when OpenCore is booted from external disk not matching macOS (ie. USB installer)
-    - Disable notification via `defaults write com.dortania.opencore-legacy-patcher AutoPatch_Notify_Mismatched_Disks -bool FALSE`
+    - Disable notification via `defaults write com.sumingyd.opencore-legacy-patcher AutoPatch_Notify_Mismatched_Disks -bool FALSE`
 - GUI Enhancements:
   - Add Reboot Prompt after Root Patching
   - Add Disk Installation Prompt after OpenCore Config Building
@@ -480,7 +480,7 @@
 ## 0.3.2
 - Implement spoofless support (ie. no SMBIOS patching)
   - Requires macOS 11.3 or newer, for 11.2.3 and older use Minimal or higher spoofing
-  - See additional notes before updating: [VMM usage notes](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/543#issuecomment-953441283)
+  - See additional notes before updating: [VMM usage notes](https://github.com/sumingyd/OpenCore-Legacy-Patcher/issues/543#issuecomment-953441283)
 - Adjust SIP setting to better reflect current SIP usage
 - Resolve Monterey Bluetooth issues on user-upgraded BCM94331 BT4.0 modules
 - Fix iGPU-only iMac14,x display output when using Minimal/Moderate spoof

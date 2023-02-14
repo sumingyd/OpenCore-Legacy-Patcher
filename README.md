@@ -9,7 +9,7 @@ Our project's main goal is to breath new life to Macs no longer supported by App
 
 ----------
 
-![GitHub all releases](https://img.shields.io/github/downloads/dortania/OpenCore-Legacy-Patcher/total?color=white&style=plastic) ![GitHub top language](https://img.shields.io/github/languages/top/dortania/OpenCore-Legacy-Patcher?color=4B8BBE&style=plastic) ![Discord](https://img.shields.io/discord/417165963327176704?color=7289da&label=discord&style=plastic)
+![GitHub all releases](https://img.shields.io/github/downloads/sumingyd/OpenCore-Legacy-Patcher/total?color=white&style=plastic) ![GitHub top language](https://img.shields.io/github/languages/top/sumingyd/OpenCore-Legacy-Patcher?color=4B8BBE&style=plastic) ![Discord](https://img.shields.io/discord/417165963327176704?color=7289da&label=discord&style=plastic)
 
 ----------
 
@@ -32,7 +32,7 @@ Note: Only clean-installs and upgrades are supported, macOS Big Sur installs alr
 
 * You can however reinstall macOS with this patcher and retain your original data
 
-Note 2: Currently OpenCore Legacy Patcher officially supports patching to run macOS Big Sur through Ventura installs. For older OSes, OpenCore may function however support is currently not provided from Dortania.
+Note 2: Currently OpenCore Legacy Patcher officially supports patching to run macOS Big Sur through Ventura installs. For older OSes, OpenCore may function however support is currently not provided from sumingyd.
 
 * For macOS Mojave and Catalina support, we recommend the use of [dosdude1's patchers](http://dosdude1.com)
 
@@ -40,7 +40,7 @@ Note 2: Currently OpenCore Legacy Patcher officially supports patching to run ma
 
 To start using the project, please see our in-depth guide:
 
-* [OpenCore Legacy Patcher Guide](https://dortania.github.io/OpenCore-Legacy-Patcher/)
+* [OpenCore Legacy Patcher Guide](https://sumingyd.github.io/OpenCore-Legacy-Patcher/)
 
 ## Support
 
@@ -48,7 +48,7 @@ This project is offered on an AS-IS basis, we do not guarantee support for any i
 
 * [OpenCore Patcher Paradise Discord Server](https://discord.gg/rqdPgH8xSN)
   * Keep in mind that the Discord is maintained by the community, so we ask everyone to be respectful.
-  * Please review our docs on [how to debug with OpenCore](https://dortania.github.io/OpenCore-Legacy-Patcher/DEBUG.html) to gather important information to help others with troubleshooting.
+  * Please review our docs on [how to debug with OpenCore](https://sumingyd.github.io/OpenCore-Legacy-Patcher/DEBUG.html) to gather important information to help others with troubleshooting.
 
 ## Running from source
 
@@ -75,10 +75,10 @@ To run the project from source, see here: [Build and run from source](./SOURCE.m
 * [Syncretic](https://forums.macrumors.com/members/syncretic.1173816/)
   * [AAAMouSSE](https://forums.macrumors.com/threads/mp3-1-others-sse-4-2-emulation-to-enable-amd-metal-driver.2206682/), [telemetrap](https://forums.macrumors.com/threads/mp3-1-others-sse-4-2-emulation-to-enable-amd-metal-driver.2206682/post-28447707) and [SurPlus](https://github.com/reenigneorcim/SurPlus)
 * [dosdude1](https://github.com/dosdude1)
-  * Main author of [original GUI](https://github.com/dortania/OCLP-GUI)
+  * Main author of [original GUI](https://github.com/sumingyd/OCLP-GUI)
   * Development of previous patchers, laying out much of what needs to be patched
 * [parrotgeek1](https://github.com/parrotgeek1)
-  * [VMM Patch Set](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/4a8f61a01da72b38a4b2250386cc4b497a31a839/payloads/Config/config.plist#L1222-L1281)
+  * [VMM Patch Set](https://github.com/sumingyd/OpenCore-Legacy-Patcher/blob/4a8f61a01da72b38a4b2250386cc4b497a31a839/payloads/Config/config.plist#L1222-L1281)
 * [BarryKN](https://github.com/BarryKN)
   * Development of previous patchers, laying out much of what needs to be patched
 * [mario_bros_tech](https://github.com/mariobrostech) and the rest of the Unsupported Mac Discord

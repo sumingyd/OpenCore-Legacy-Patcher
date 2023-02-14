@@ -160,7 +160,7 @@ class CreateBinary:
         ]
 
         whitelist_files = [
-            "com.dortania.opencore-legacy-patcher.auto-patch.plist",
+            "com.sumingyd.opencore-legacy-patcher.auto-patch.plist",
             "entitlements.plist",
             "launcher.sh",
             "OC-Patcher-TUI.icns",
@@ -214,7 +214,7 @@ class CreateBinary:
             download_result = subprocess.run(
                 [
                     "curl", "-LO",
-                    f"https://github.com/dortania/PatcherSupportPkg/releases/download/{patcher_support_pkg_version}/{resource}"
+                    f"https://github.com/sumingyd/PatcherSupportPkg/releases/download/{patcher_support_pkg_version}/{resource}"
                 ],
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE
             )

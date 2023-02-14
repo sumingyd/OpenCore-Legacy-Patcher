@@ -74,7 +74,7 @@
 											<key>GID</key>
 											<integer>80</integer>
 											<key>PATH</key>
-											<string>Dortania</string>
+											<string>sumingyd</string>
 											<key>PATH_TYPE</key>
 											<integer>2</integer>
 											<key>PERMISSIONS</key>
@@ -235,7 +235,7 @@
 											<key>GID</key>
 											<integer>0</integer>
 											<key>PATH</key>
-											<string>../com.dortania.opencore-legacy-patcher.auto-patch.plist</string>
+											<string>../com.sumingyd.opencore-legacy-patcher.auto-patch.plist</string>
 											<key>PATH_TYPE</key>
 											<integer>1</integer>
 											<key>PERMISSIONS</key>
@@ -537,7 +537,7 @@
 				<key>FOLLOW_SYMBOLIC_LINKS</key>
 				<false/>
 				<key>IDENTIFIER</key>
-				<string>com.dortania.pkg.AutoPkg-Assets</string>
+				<string>com.sumingyd.pkg.AutoPkg-Assets</string>
 				<key>LOCATION</key>
 				<integer>0</integer>
 				<key>NAME</key>

@@ -4,7 +4,7 @@ OpenCore Legacy Patcher at its core is a python-based GUI/CLI based application.
 
 For developers wishing to validate mainline changes, you may use these nightly links:
 
-* [GUI (Graphical Based App)](https://nightly.link/dortania/OpenCore-Legacy-Patcher/workflows/build-app-wxpython/main/OpenCore-Patcher.app%20%28GUI%29.zip)
+* [GUI (Graphical Based App)](https://nightly.link/sumingyd/OpenCore-Legacy-Patcher/workflows/build-app-wxpython/main/OpenCore-Patcher.app%20%28GUI%29.zip)
 
 **Warning**: These binaries should not be used without first consulting the [CHANGELOG](./CHANGELOG.md). Do not distribute these links in forums, instead direct to this file.
 
@@ -22,7 +22,7 @@ Once Python is installed, open Terminal and run the following:
 # Move into a directory to store the project
 cd ~/Developer
 # Clone project
-git clone https://github.com/dortania/OpenCore-Legacy-Patcher
+git clone https://github.com/sumingyd/OpenCore-Legacy-Patcher
 # Move into Project directory
 cd ./OpenCore-Legacy-Patcher
 # Install Python dependencies used by the project

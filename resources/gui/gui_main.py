@@ -209,14 +209,14 @@ class wx_python_gui:
             threading.Thread(target=self.check_for_updates).start()
 
     def check_for_local_installs(self, event=None):
-        # Update app in '/Library/Application Support/Dortania' folder
+        # Update app in '/Library/Application Support/sumingyd' folder
 
         # Skip if we're running from source
         if self.constants.launcher_script:
             return False
 
         # Only performed if application is already installed (ie. we're updating)
-        application_path = Path("/Library/Application Support/Dortania/OpenCore-Patcher.app")
+        application_path = Path("/Library/Application Support/sumingyd/OpenCore-Patcher.app")
         if not application_path.exists():
             return False
 
@@ -275,7 +275,7 @@ class wx_python_gui:
         args = [
             "osascript",
             "-e",
-            f'''do shell script "ditto {path} '/Library/Application Support/Dortania/OpenCore-Patcher.app'"'''
+            f'''do shell script "ditto {path} '/Library/Application Support/sumingyd/OpenCore-Patcher.app'"'''
             ' with prompt "OpenCore Legacy Patcher needs administrator privileges to copy in."'
             " with administrator privileges"
             " without altering line endings",
@@ -283,19 +283,19 @@ class wx_python_gui:
 
         result = subprocess.run(args,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if result.returncode != 0:
-            logging.info("- Failed to move application into /Library/Application Support/Dortania/OpenCore-Patcher.app")
+            logging.info("- Failed to move application into /Library/Application Support/sumingyd/OpenCore-Patcher.app")
             # Notify user we failed to move the application
             self.popup = wx.MessageDialog(
                 self.frame,
-                f"Failed to move the application to the Applications folder.\n\nThis is likely due to permission errors, you can copy the app manually into '/Library/Application Support/Dortania/OpenCore-Patcher.app' if you continue to see this error.",
+                f"Failed to move the application to the Applications folder.\n\nThis is likely due to permission errors, you can copy the app manually into '/Library/Application Support/sumingyd/OpenCore-Patcher.app' if you continue to see this error.",
                 "Failed to Move!",
                 style = wx.OK | wx.ICON_EXCLAMATION
             )
             self.popup.ShowModal()
             return False
 
-        subprocess.run(["xattr", "-cr", "/Library/Application Support/Dortania/OpenCore-Patcher.app"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        subprocess.run(["open", "/Library/Application Support/Dortania/OpenCore-Patcher.app"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        subprocess.run(["xattr", "-cr", "/Library/Application Support/sumingyd/OpenCore-Patcher.app"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        subprocess.run(["open", "/Library/Application Support/sumingyd/OpenCore-Patcher.app"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if "AppTranslocation" not in path:
             subprocess.run(["rm", "-R", path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
@@ -1776,7 +1776,7 @@ class wx_python_gui:
                     dlg.SetYesNoCancelLabels("View Github Issue", "Download Anyways", "Cancel")
                     result = dlg.ShowModal()
                     if result == wx.ID_YES:
-                        webbrowser.open("https://github.com/dortania/OpenCore-Legacy-Patcher/issues/1021")
+                        webbrowser.open("https://github.com/sumingyd/OpenCore-Legacy-Patcher/issues/1021")
                         return
                     elif result == wx.ID_NO:
                         pass
@@ -3359,7 +3359,7 @@ class wx_python_gui:
 
     def generate_new_serials_clicked(self, event):
         # Throw pop up warning about misusing this feature
-        dlg = wx.MessageDialog(self.frame_modal, "Please take caution when using serial spoofing. This should only be used on machines that were legally obtained and require reserialization.\n\nNote: new serials are only overlayed through OpenCore and are not permanently installed into ROM.\n\nMisuse of this setting can break power management and other aspects of the OS if the system does not need spoofing\n\nDortania does not condone the use of our software on stolen devices.\n\nAre you certain you want to continue?", "Warning", wx.YES_NO | wx.ICON_WARNING)
+        dlg = wx.MessageDialog(self.frame_modal, "Please take caution when using serial spoofing. This should only be used on machines that were legally obtained and require reserialization.\n\nNote: new serials are only overlayed through OpenCore and are not permanently installed into ROM.\n\nMisuse of this setting can break power management and other aspects of the OS if the system does not need spoofing\n\nsumingyd does not condone the use of our software on stolen devices.\n\nAre you certain you want to continue?", "Warning", wx.YES_NO | wx.ICON_WARNING)
         if dlg.ShowModal() == wx.ID_NO:
             return
         macserial_output = subprocess.run([self.constants.macserial_path] + f"-g -m {self.constants.custom_model or self.computer.real_model} -n 1".split(), stdout=subprocess.PIPE, stderr=subprocess.STDOUT)

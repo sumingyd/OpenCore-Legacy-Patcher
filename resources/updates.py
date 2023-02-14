@@ -7,7 +7,7 @@ import logging
 
 from resources import network_handler, constants
 
-REPO_LATEST_RELEASE_URL: str = "https://api.github.com/repos/dortania/OpenCore-Legacy-Patcher/releases/latest"
+REPO_LATEST_RELEASE_URL: str = "https://api.github.com/repos/sumingyd/OpenCore-Legacy-Patcher/releases/latest"
 
 
 class CheckBinaryUpdates:
@@ -116,7 +116,7 @@ class CheckBinaryUpdates:
                         "Version":     self.remote_version,
                         "Link":        asset["browser_download_url"],
                         "Type":        self._determine_remote_type(asset["name"]),
-                        "Github Link": f"https://github.com/dortania/OpenCore-Legacy-Patcher/releases/{self.remote_version}"
+                        "Github Link": f"https://github.com/sumingyd/OpenCore-Legacy-Patcher/releases/{self.remote_version}"
                     }
                 })
                 return available_binaries

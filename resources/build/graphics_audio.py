@@ -264,8 +264,8 @@ class build_graphics_audio:
             self.config["DeviceProperties"]["Add"]["PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)"] = {
                 "class-code": binascii.unhexlify("FFFFFFFF"),
                 "device-id": binascii.unhexlify("FFFF0000"),
-                "IOName": "Dortania Disabled Card",
-                "name": "Dortania Disabled Card"
+                "IOName": "sumingyd Disabled Card",
+                "name": "sumingyd Disabled Card"
             }
             self.config["DeviceProperties"]["Delete"]["PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)"] = ["class-code", "device-id", "IOName", "name"]
             # Add AMDGPUWakeHandler

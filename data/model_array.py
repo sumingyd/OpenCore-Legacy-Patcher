@@ -127,7 +127,7 @@ LegacyAudio = [
     "iMac12,1",
     "iMac12,2",
     "MacPro3,1",
-    "Dortania1,1",
+    "sumingyd1,1",
 ]
 
 # GPU
@@ -211,7 +211,7 @@ LegacyGPU = [
     "iMac11,3",  # AMD 5000
     "iMac12,1",  # AMD 6000
     "iMac12,2",  # AMD 6000
-    "Dortania1,1",  # RTX 3080
+    "sumingyd1,1",  # RTX 3080
 ]
 
 LegacyBrightness = [
@@ -236,7 +236,7 @@ DualGPUPatch = [
     "iMac13,2",
     "iMac14,2",
     "iMac14,3",
-    "Dortania1,1",
+    "sumingyd1,1",
 ]
 
 IntelNvidiaDRM = [
@@ -247,9 +247,9 @@ IntelNvidiaDRM = [
 ]
 
 # Mac Pro and Xserve
-MacPro = ["MacPro3,1", "MacPro4,1", "MacPro5,1", "Xserve2,1", "Xserve3,1", "Dortania1,1"]
+MacPro = ["MacPro3,1", "MacPro4,1", "MacPro5,1", "Xserve2,1", "Xserve3,1", "sumingyd1,1"]
 
-NoAGPMSupport = ["MacBook4,1", "MacBookPro4,1", "iMac7,1", "iMac8,1", "MacPro3,1", "Xserve2,1", "Dortania1,1"]
+NoAGPMSupport = ["MacBook4,1", "MacBookPro4,1", "iMac7,1", "iMac8,1", "MacPro3,1", "Xserve2,1", "sumingyd1,1"]
 
 AGDPSupport = [
     "MacBookPro9,1",

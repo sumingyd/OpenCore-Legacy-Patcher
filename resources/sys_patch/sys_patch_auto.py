@@ -68,7 +68,7 @@ class AutomaticSysPatch:
                         args_string = f"{self.constants.launcher_binary} {self.constants.launcher_script} --gui_patch"
 
                     warning_str = ""
-                    if network_handler.NetworkUtilities("https://api.github.com/repos/dortania/OpenCore-Legacy-Patcher/releases/latest").verify_network_connection() is False:
+                    if network_handler.NetworkUtilities("https://api.github.com/repos/sumingyd/OpenCore-Legacy-Patcher/releases/latest").verify_network_connection() is False:
                         warning_str = f"""\n\nWARNING: We're unable to verify whether there are any new releases of OpenCore Legacy Patcher on Github. Be aware that you may be using an outdated version for this OS. If you're unsure, verify on Github that OpenCore Legacy Patcher {self.constants.patcher_version} is the latest official release"""
 
                     args = [
@@ -256,8 +256,8 @@ class AutomaticSysPatch:
         Install the Auto Patcher Launch Agent
 
         Installs the following:
-            - OpenCore-Patcher.app in /Library/Application Support/Dortania/
-            - com.dortania.opencore-legacy-patcher.auto-patch.plist in /Library/LaunchAgents/
+            - OpenCore-Patcher.app in /Library/Application Support/sumingyd/
+            - com.sumingyd.opencore-legacy-patcher.auto-patch.plist in /Library/LaunchAgents/
 
         See start_auto_patch() comments for more info
         """
@@ -266,55 +266,55 @@ class AutomaticSysPatch:
             logging.info("- Skipping Auto Patcher Launch Agent, not supported when running from source")
             return
 
-        if self.constants.launcher_binary.startswith("/Library/Application Support/Dortania/"):
+        if self.constants.launcher_binary.startswith("/Library/Application Support/sumingyd/"):
             logging.info("- Skipping Auto Patcher Launch Agent, already installed")
             return
 
-        # Verify our binary isn't located in '/Library/Application Support/Dortania/'
+        # Verify our binary isn't located in '/Library/Application Support/sumingyd/'
         # As we'd simply be duplicating ourselves
         logging.info("- Installing Auto Patcher Launch Agent")
 
-        if not Path("Library/Application Support/Dortania").exists():
-            logging.info("- Creating /Library/Application Support/Dortania/")
-            utilities.process_status(utilities.elevated(["mkdir", "-p", "/Library/Application Support/Dortania"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
+        if not Path("Library/Application Support/sumingyd").exists():
+            logging.info("- Creating /Library/Application Support/sumingyd/")
+            utilities.process_status(utilities.elevated(["mkdir", "-p", "/Library/Application Support/sumingyd"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
 
-        logging.info("- Copying OpenCore Patcher to /Library/Application Support/Dortania/")
-        if Path("/Library/Application Support/Dortania/OpenCore-Patcher.app").exists():
+        logging.info("- Copying OpenCore Patcher to /Library/Application Support/sumingyd/")
+        if Path("/Library/Application Support/sumingyd/OpenCore-Patcher.app").exists():
             logging.info("- Deleting existing OpenCore-Patcher")
-            utilities.process_status(utilities.elevated(["rm", "-R", "/Library/Application Support/Dortania/OpenCore-Patcher.app"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
+            utilities.process_status(utilities.elevated(["rm", "-R", "/Library/Application Support/sumingyd/OpenCore-Patcher.app"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
 
         # Strip everything after OpenCore-Patcher.app
         path = str(self.constants.launcher_binary).split("/Contents/MacOS/OpenCore-Patcher")[0]
-        logging.info(f"- Copying {path} to /Library/Application Support/Dortania/")
-        utilities.process_status(utilities.elevated(["ditto", path, "/Library/Application Support/Dortania/OpenCore-Patcher.app"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
+        logging.info(f"- Copying {path} to /Library/Application Support/sumingyd/")
+        utilities.process_status(utilities.elevated(["ditto", path, "/Library/Application Support/sumingyd/OpenCore-Patcher.app"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
 
-        if not Path("/Library/Application Support/Dortania/OpenCore-Patcher.app").exists():
+        if not Path("/Library/Application Support/sumingyd/OpenCore-Patcher.app").exists():
             # Sometimes the binary the user launches may have a suffix (ie. OpenCore-Patcher 3.app)
             # We'll want to rename it to OpenCore-Patcher.app
             path = path.split("/")[-1]
             logging.info(f"- Renaming {path} to OpenCore-Patcher.app")
-            utilities.process_status(utilities.elevated(["mv", f"/Library/Application Support/Dortania/{path}", "/Library/Application Support/Dortania/OpenCore-Patcher.app"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
+            utilities.process_status(utilities.elevated(["mv", f"/Library/Application Support/sumingyd/{path}", "/Library/Application Support/sumingyd/OpenCore-Patcher.app"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
 
-        subprocess.run(["xattr", "-cr", "/Library/Application Support/Dortania/OpenCore-Patcher.app"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        subprocess.run(["xattr", "-cr", "/Library/Application Support/sumingyd/OpenCore-Patcher.app"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         # Copy over our launch agent
         logging.info("- Copying auto-patch.plist Launch Agent to /Library/LaunchAgents/")
-        if Path("/Library/LaunchAgents/com.dortania.opencore-legacy-patcher.auto-patch.plist").exists():
+        if Path("/Library/LaunchAgents/com.sumingyd.opencore-legacy-patcher.auto-patch.plist").exists():
             logging.info("- Deleting existing auto-patch.plist")
-            utilities.process_status(utilities.elevated(["rm", "/Library/LaunchAgents/com.dortania.opencore-legacy-patcher.auto-patch.plist"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
+            utilities.process_status(utilities.elevated(["rm", "/Library/LaunchAgents/com.sumingyd.opencore-legacy-patcher.auto-patch.plist"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
         if not Path("/Library/LaunchAgents/").exists():
             logging.info("- Creating /Library/LaunchAgents/")
             utilities.process_status(utilities.elevated(["mkdir", "-p", "/Library/LaunchAgents/"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
         utilities.process_status(utilities.elevated(["cp", self.constants.auto_patch_launch_agent_path, "/Library/LaunchAgents/"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
 
-        # Set the permissions on the com.dortania.opencore-legacy-patcher.auto-patch.plist
+        # Set the permissions on the com.sumingyd.opencore-legacy-patcher.auto-patch.plist
         logging.info("- Setting permissions on auto-patch.plist")
-        utilities.process_status(utilities.elevated(["chmod", "644", "/Library/LaunchAgents/com.dortania.opencore-legacy-patcher.auto-patch.plist"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
-        utilities.process_status(utilities.elevated(["chown", "root:wheel", "/Library/LaunchAgents/com.dortania.opencore-legacy-patcher.auto-patch.plist"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
+        utilities.process_status(utilities.elevated(["chmod", "644", "/Library/LaunchAgents/com.sumingyd.opencore-legacy-patcher.auto-patch.plist"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
+        utilities.process_status(utilities.elevated(["chown", "root:wheel", "/Library/LaunchAgents/com.sumingyd.opencore-legacy-patcher.auto-patch.plist"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
 
         # Making app alias
         # Simply an easy way for users to notice the app
         # If there's already an alias or exiting app, skip
         if not Path("/Applications/OpenCore-Patcher.app").exists():
             logging.info("- Making app alias")
-            utilities.process_status(utilities.elevated(["ln", "-s", "/Library/Application Support/Dortania/OpenCore-Patcher.app", "/Applications/OpenCore-Patcher.app"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))
+            utilities.process_status(utilities.elevated(["ln", "-s", "/Library/Application Support/sumingyd/OpenCore-Patcher.app", "/Applications/OpenCore-Patcher.app"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT))

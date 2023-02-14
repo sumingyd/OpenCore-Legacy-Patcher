@@ -14,15 +14,15 @@ class Constants:
         # Patcher Versioning
         self.patcher_version = "0.6.2"  # OpenCore-Legacy-Patcher
         self.patcher_support_pkg_version = "0.8.3"  #  PatcherSupportPkg
-        self.url_patcher_support_pkg = "https://github.com/dortania/PatcherSupportPkg/releases/download/"
-        self.nightly_url_patcher_support_pkg = "https://nightly.link/dortania/PatcherSupportPkg/workflows/build/master/"
+        self.url_patcher_support_pkg = "https://github.com/sumingyd/PatcherSupportPkg/releases/download/"
+        self.nightly_url_patcher_support_pkg = "https://nightly.link/sumingyd/PatcherSupportPkg/workflows/build/master/"
         self.discord_link = "https://discord.gg/rqdPgH8xSN"
-        self.guide_link = "https://dortania.github.io/OpenCore-Legacy-Patcher/"
-        self.repo_link = "https://github.com/dortania/OpenCore-Legacy-Patcher"
+        self.guide_link = "https://sumingyd.github.io/OpenCore-Legacy-Patcher/"
+        self.repo_link = "https://github.com/sumingyd/OpenCore-Legacy-Patcher"
         self.repo_link_latest = f"{self.repo_link}/releases/tag/{self.patcher_version}"
-        self.copyright_date = "Copyright © 2020-2023 Dortania"
+        self.copyright_date = "Copyright © 2020-2023 sumingyd"
         self.installer_pkg_url = f"{self.repo_link}/releases/download/{self.patcher_version}/AutoPkg-Assets.pkg"
-        self.installer_pkg_url_nightly = "http://nightly.link/dortania/OpenCore-Legacy-Patcher/workflows/build-app-wxpython/main/AutoPkg-Assets.pkg.zip"
+        self.installer_pkg_url_nightly = "http://nightly.link/sumingyd/OpenCore-Legacy-Patcher/workflows/build-app-wxpython/main/AutoPkg-Assets.pkg.zip"
 
         # OpenCore Versioning
         # https://github.com/acidanthera/OpenCorePkg
@@ -64,7 +64,7 @@ class Constants:
         self.apple_usb_11_injector = "1.0.0" # AppleUSBUHCI/OHCI
         self.aicpupm_version = "1.0.0" #       AppleIntelCPUPowerManagement/Client
 
-        ## Apple - Dortania Modified
+        ## Apple - sumingyd Modified
         self.bcm570_version = "1.0.2"  #             CatalinaBCM5701Ethernet
         self.i210_version = "1.0.0"  #               CatalinaIntelI210Ethernet
         self.corecaptureelcap_version = "1.0.1"  #   corecaptureElCap
@@ -72,8 +72,8 @@ class Constants:
         self.bigsursdxc_version = "1.0.0"  #         BigSurSDXC
         self.monterey_ahci_version = "1.0.0"  #      CatalinaAHCI
 
-        ## Dortania
-        ## https://github.com/dortania
+        ## sumingyd
+        ## https://github.com/sumingyd
         self.backlight_injector_version = "1.1.0"  # BacklightInjector
         self.smcspoof_version = "1.0.0"  #           SMC-Spoof
         self.mce_version = "1.0.0"  #                AppleMCEReporterDisabler
@@ -84,7 +84,7 @@ class Constants:
         ## Syncretic
         ## https://forums.macrumors.com/members/syncretic.1173816/
         ## https://github.com/reenigneorcim/latebloom
-        self.mousse_version = "0.95-Dortania"  # MouSSE
+        self.mousse_version = "0.95-sumingyd"  # MouSSE
         self.telemetrap_version = "1.0.0"  #     telemetrap
 
         ## cdf
@@ -233,7 +233,7 @@ class Constants:
     # Launch Agent
     @property
     def auto_patch_launch_agent_path(self):
-        return self.payload_path / Path("com.dortania.opencore-legacy-patcher.auto-patch.plist")
+        return self.payload_path / Path("com.sumingyd.opencore-legacy-patcher.auto-patch.plist")
 
     # ACPI
     @property

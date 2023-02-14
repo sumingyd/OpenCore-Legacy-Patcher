@@ -37,7 +37,7 @@ All of these models now have support in OpenCore Legacy Patcher.
 
 ### MacBookPro11,3 booting issue without Kepler acceleration
 
-Due to the display being routed through the NVIDIA Kepler card and macOS being rendered on the Intel iGPU, users have been experiencing issues booting without post-install patches applied ([see here for more info](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/522).) Currently the only workaround is to install the patches in safe mode, by holding down `Shift+Enter` when you select macOS in the OCLP boot picker.
+Due to the display being routed through the NVIDIA Kepler card and macOS being rendered on the Intel iGPU, users have been experiencing issues booting without post-install patches applied ([see here for more info](https://github.com/sumingyd/OpenCore-Legacy-Patcher/issues/522).) Currently the only workaround is to install the patches in safe mode, by holding down `Shift+Enter` when you select macOS in the OCLP boot picker.
 
 ## Previously Broken Hardware
 
@@ -46,7 +46,7 @@ Due to the display being routed through the NVIDIA Kepler card and macOS being r
 * Documentation:
   * [5K iMac and UEFI: Fixing the dreaded output limitation](https://khronokernel.github.io/macos/2021/12/08/5K-UEFI.html)
 * Associated Github Issue:
-  * [5k Output issues on iMac15,1 (27" 5k iMac - 2014) #359](https://github.com/dortania/OpenCore-Legacy-Patcher/issues/359)
+  * [5k Output issues on iMac15,1 (27" 5k iMac - 2014) #359](https://github.com/sumingyd/OpenCore-Legacy-Patcher/issues/359)
 
 :::
 

@@ -8,7 +8,7 @@ This doc is centered around downloading and writing the macOS installer to a USB
 
 With OpenCore Legacy Patcher, our new GUI includes a download menu for macOS installers. So to start off, you'll want to grab our app:
 
-* [OpenCore Legacy Patcher Release Apps](https://github.com/dortania/OpenCore-Legacy-Patcher/releases)
+* [OpenCore Legacy Patcher Release Apps](https://github.com/sumingyd/OpenCore-Legacy-Patcher/releases)
 
 For this guide, we'll be using the standard OpenCore-Patcher (GUI).
 
